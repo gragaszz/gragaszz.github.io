@@ -20,20 +20,25 @@
     var CONFIG = {"hostname":"gragaszz.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前言​    发现的的确确不太会">
+  <meta name="description" content="前言​    发现的的确确不太会排版嗷，但继续保持拉，总会好起来的嘛，还有上一次的图片发现无法加载，度娘了一下好像也不太适合，后面问朋友发现可以将图片再网站托管，用上传后返回的链接，着实可以。保存图片的地方用的图床！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-Day-two">
 <meta property="og:url" content="https://gragaszz.github.io/2021/03/19/Day-two/index.html">
 <meta property="og:site_name" content="看不见我">
-<meta property="og:description" content="前言​    发现的的确确不太会">
+<meta property="og:description" content="前言​    发现的的确确不太会排版嗷，但继续保持拉，总会好起来的嘛，还有上一次的图片发现无法加载，度娘了一下好像也不太适合，后面问朋友发现可以将图片再网站托管，用上传后返回的链接，着实可以。保存图片的地方用的图床！">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/03/25/6OSpxP.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/03/25/6Okllj.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200409202919873.png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5icTIzMy5jb20va2FucXEvcGljL3VwbG9hZC8yMDE4LzA5MjYvMTUzNzkzMDA1NjY3NDk0MS5qcGc?x-oss-process=image/format">
 <meta property="article:published_time" content="2021-03-19T01:11:18.000Z">
-<meta property="article:modified_time" content="2021-03-25T02:34:57.226Z">
+<meta property="article:modified_time" content="2021-03-25T07:49:54.397Z">
 <meta property="article:author" content="Gragas">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="study">
 <meta property="article:tag" content="diray">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/03/25/6OSpxP.png">
 
 <link rel="canonical" href="https://gragaszz.github.io/2021/03/19/Day-two/">
 
@@ -198,7 +203,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-25 10:34:57" itemprop="dateModified" datetime="2021-03-25T10:34:57+08:00">2021-03-25</time>
+                <time title="修改时间：2021-03-25 15:49:54" itemprop="dateModified" datetime="2021-03-25T15:49:54+08:00">2021-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,7 +233,129 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    发现的的确确不太会</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    发现的的确确不太会排版嗷，但继续保持拉，总会好起来的嘛，还有上一次的图片发现无法加载，度娘了一下好像也不太适合，后面问朋友发现可以将图片再网站托管，用上传后返回的链接，着实可以。保存图片的地方用的图床！</p>
+<a id="more"></a>
+
+<h1 id="方法详解"><a href="#方法详解" class="headerlink" title="方法详解"></a>方法详解</h1><h2 id="一、方法的定义"><a href="#一、方法的定义" class="headerlink" title="一、方法的定义"></a>一、方法的定义</h2><ul>
+<li>Java的方法类似于其他语言的函数，是一段用来完成特定功能的代码片段，一般情况下，定义一个方法包含以下语法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(参数类型 参数名)&#123;</span><br><span class="line">    ...</span><br><span class="line">    方法体</span><br><span class="line">    ...</span><br><span class="line">   <span class="keyword">return</span> 返回值;</span><br><span class="line">    <span class="comment">//如果返回值类型void ,可以不用写return </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>方法包含一个方法头和一个方法体。下面是一个方法的所有部分：</p>
+<ul>
+<li><strong>修饰符</strong>：修饰符，这是可选的，告诉编译器如何调用该方法。定义了该方法的访问类型</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://z3.ax1x.com/2021/03/25/6OSpxP.png" alt="6OSpxP.png">    </p>
+<ul>
+<li><p><strong>返回值类型</strong>：方法可能会返回值。returnValueType 是方法返回<br>​值的数据类型。有些方法执行所需的操作，但没有返回值。在这种情况下，returnValueType 是关键字void。</p>
+</li>
+<li><p><strong>方法名</strong>：是方法的实际名称。方法名和参数表共同构成方法签名</p>
+</li>
+<li><p><strong>参数类型</strong>：参数像是一个占位符。当方法被调用是，传递值给参数。这个值被称为实参或变量。参数列表是指方法的参数类型、顺序和参数的个数。参数是可选的，方法可以不包含任何参数。</p>
+<ul>
+<li>形式参数：在方法被调用时用于接收外界输入的数据</li>
+<li>实参：调用方法时实际传给方法的数据</li>
+</ul>
+</li>
+<li><p><strong>方法体</strong>：方法体包含具体的语句，定义该方法的功能</p>
+</li>
+</ul>
+<h2 id="二、方法的调用"><a href="#二、方法的调用" class="headerlink" title="二、方法的调用"></a>二、方法的调用</h2><ul>
+<li>调用方法：对象名.方法名(实参列表)  </li>
+<li>Java 支持两种调用方法的方式，根据方法是否返回值来选择.</li>
+<li>当方法返回一个值得时候，方法通常被当做一个值。例如：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> larger = max(<span class="number">30</span>,<span class="number">40</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>如果为静态方法，那么可以直接用方法名调用方法，相当于this.方法名</li>
+<li>实参的数量和类型必须和形参保持完全的一致。</li>
+<li>方法之间只能进行相互的调用，而不能在方法中声明方法，就目前而言声明的方法都和main方法时并列的</li>
+</ul>
+</blockquote>
+<h2 id="三、方法的重载"><a href="#三、方法的重载" class="headerlink" title="三、方法的重载"></a>三、方法的重载</h2><ul>
+<li><p>重载就是在一个类中，有相同的函数名称，但形参不同的函数</p>
+</li>
+<li><p>方法的重载的规则：</p>
+<ul>
+<li>方法名称必须相同</li>
+<li>参数列表必须不同（个数不同、或类型不同、参数排列顺序不同等）</li>
+<li>方法的返回类型可以相同也可以不相同</li>
+<li>方法的重载与方法的修饰符和返回值没有任何关系</li>
+</ul>
+</li>
+<li><p>实现理论：</p>
+<p>方法名称相同时，编译器会根据调用方法的参数个数、参数类型等去逐个匹配，以选择对应的方法，如果匹配失败，则编译器报错</p>
+</li>
+</ul>
+<h2 id="四、拓展"><a href="#四、拓展" class="headerlink" title="四、拓展"></a>四、拓展</h2><p><strong><em>区分什么是类方法和实例方法</em></strong></p>
+<p><strong>类方法：</strong></p>
+<ul>
+<li><code>使用static修饰的方法</code>，是属于当前整个类的，而不是属于某个实例的，只能处理static域或调用static方法。</li>
+</ul>
+<p><strong>实例方法：</strong></p>
+<ul>
+<li>属于对象的方法，有对象来调用。</li>
+</ul>
+<ul>
+<li><strong>一个类中的方法可以互相调用。但要注意：实例方法可以调用该类中的其他方法，例如，sum()可以调用Max()。类方法只能调用其他类方法，不能调用实例方法。</strong></li>
+<li>类方法又叫静态方法， 实例方法又叫非静态方法。</li>
+<li>类方法可以直接通过类名调用，实例方法必需先初始化类的实例，然后通过类的实例才能调用</li>
+</ul>
+<h1 id="数组详解"><a href="#数组详解" class="headerlink" title="数组详解"></a>数组详解</h1><blockquote>
+<p>数组是<strong>相同数据</strong>的<strong>有序</strong>集合，它的<strong>长度固</strong>定，一旦创建，无法进行修改。</p>
+</blockquote>
+<h2 id="一、数组的声明和创建"><a href="#一、数组的声明和创建" class="headerlink" title="一、数组的声明和创建"></a>一、数组的声明和创建</h2><p>首先必须<strong>声明</strong>数组变量，才能在程序中使用数组。下面是声明数组变量的两种语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据类型  数组名</span></span><br><span class="line">dataType[] arrayRefVar;		<span class="comment">// 首选的方法，推荐使用</span></span><br><span class="line">或</span><br><span class="line">dataType arrayRefVar[];		<span class="comment">// 为C/C++程序员保留的方式，不推荐</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6Okllj"><img src="https://z3.ax1x.com/2021/03/25/6Okllj.png" alt="6Okllj.png" style="zoom:50%;"></a>        </p>
+<p>Java语言使用<strong>new</strong>操作符来创建数组，语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayRefVar = <span class="keyword">new</span> dataType[arraySize];</span><br></pre></td></tr></table></figure>
+<h2 id="二、数组初始化"><a href="#二、数组初始化" class="headerlink" title="二、数组初始化"></a>二、数组初始化</h2><h3 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化:"></a>静态初始化:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a = &#123;<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="comment">//int类型数组</span></span><br><span class="line">Boy[] b = &#123;<span class="keyword">new</span> Boy(<span class="number">18</span>,<span class="number">180</span>),<span class="keyword">new</span> Boy(<span class="number">17</span>,<span class="number">178</span>)&#125;;</span><br><span class="line"><span class="comment">//引用类型数组，将Boy类实例化对象初始化给b数组</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化:"></a>动态初始化:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">c[<span class="number">0</span>] = <span class="number">233</span>;</span><br><span class="line"><span class="comment">//先给数组分配空间，然后对各个元素赋值</span></span><br></pre></td></tr></table></figure>
+<h3 id="初始化默认值"><a href="#初始化默认值" class="headerlink" title="初始化默认值"></a>初始化默认值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化时会给每个元素赋予一个默认的值</span></span><br><span class="line"><span class="keyword">int</span>[] score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];<span class="comment">//默认为0,0</span></span><br><span class="line">String[] name = <span class="keyword">new</span> String[<span class="number">2</span>];<span class="comment">//默认null,null</span></span><br><span class="line"><span class="keyword">boolean</span>[] chioce = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">2</span>];<span class="comment">//默认false,false</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>(当数组类型为引用类型，默认值为null，当你访问其<strong>属性</strong>的时候，必须进行初始化，否则会报<strong>空指针异常</strong>)</p>
+</blockquote>
+<h2 id="三、数组的使用"><a href="#三、数组的使用" class="headerlink" title="三、数组的使用"></a>三、数组的使用</h2><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>​            我们可以使用for循环来对数组进行动态初始化及元素的访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line">        <span class="comment">//初始化数组元素的值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">        <span class="comment">//a.length可得到数组元素的个数</span></span><br><span class="line">            a[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//读取元素的值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">            System.out.print(a[i]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 结果：0 1 2 3</span></span><br></pre></td></tr></table></figure>
+<p>对于数组，和含有一组元素的集合，可使用增强for循环进行遍历，但是在遍历时<strong>不能对数组元素进行修改</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] str= &#123;<span class="string">&quot;aa&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;cc&quot;</span>,<span class="string">&quot;dd&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (String temp:str) &#123;</span><br><span class="line">			System.out.println(temp);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="数组作为参数和返回值"><a href="#数组作为参数和返回值" class="headerlink" title="数组作为参数和返回值"></a>数组作为参数和返回值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wmwx.array;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo04</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] new_array = reverse(array);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i: new_array) &#123;</span><br><span class="line">            System.out.println(i);      <span class="comment">//输出5、4、3、2、1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//数组作为返回值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] reverse(<span class="keyword">int</span>[] array)&#123;		<span class="comment">//数组作为参数</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[array.length];</span><br><span class="line">        <span class="comment">//反转整个数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>, j=array.length-<span class="number">1</span>;i&lt;array.length;i++,j--)&#123;</span><br><span class="line">            result[j] = array[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="四、二维数组"><a href="#四、二维数组" class="headerlink" title="四、二维数组"></a>四、二维数组</h2><blockquote>
+<p>二维数组相当于在一维数组的基础上，每个元素中有一个一维数组</p>
+</blockquote>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] a;</span><br><span class="line"><span class="keyword">int</span> b[][];</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] c = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>][];</span><br><span class="line"><span class="comment">//int[][] d = new int [][3];//错误</span></span><br><span class="line"><span class="keyword">int</span> [][] e = <span class="keyword">new</span> <span class="keyword">int</span>&#123;</span><br><span class="line">						&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;,</span><br><span class="line"> 						&#123; <span class="number">3</span>, <span class="number">4</span> &#125;,</span><br><span class="line">  						&#123; <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;</span><br><span class="line">  						&#125;;<span class="comment">//静态初始化</span></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">0</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;<span class="comment">//动态初始化</span></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">1</span>] = &#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>空间分配：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200409202919873.png"></p>
+<h2 id="五、数组工具类Arrays"><a href="#五、数组工具类Arrays" class="headerlink" title="五、数组工具类Arrays"></a>五、数组工具类Arrays</h2><blockquote>
+<p>java.util.Arrays 类能方便地操作数组，它提供的所有方法都是静态的。</p>
+</blockquote>
+<p>提供以下基本功能（不止这些，具体可查API）：</p>
+<ul>
+<li>打印数组：通过 toString 方法</li>
+<li>给数组赋值：通过 fill 方法。</li>
+<li>对数组排序：通过 sort 方法,按升序。</li>
+<li>比较数组：通过 equals 方法比较数组中元素值是否相等。</li>
+<li>查找数组元素：通过 binarySearch 方法能对排序好的数组进行二分查找法操作。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wmwx.array;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo06</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">1</span>, <span class="number">234</span>, <span class="number">56</span>, <span class="number">7890</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印数组</span></span><br><span class="line">        System.out.println(array);         </span><br><span class="line">        <span class="comment">//输出[I@e73f9ac  array的引用地址</span></span><br><span class="line">        </span><br><span class="line">        System.out.println(Arrays.toString(array));     </span><br><span class="line">        <span class="comment">//输出[1, 234, 56, 7890]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//排序数组</span></span><br><span class="line">        Arrays.sort(array);   <span class="comment">//升序排序</span></span><br><span class="line">        System.out.println(Arrays.toString(array));     </span><br><span class="line">        <span class="comment">//输出[1, 56, 234, 7890]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找元素</span></span><br><span class="line">        System.out.println(Arrays.binarySearch(array, <span class="number">234</span>));            <span class="comment">//输出2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//填充数组</span></span><br><span class="line">        Arrays.fill(array, <span class="number">0</span>);</span><br><span class="line">        System.out.println(Arrays.toString(array));   </span><br><span class="line">        <span class="comment">//输出[0, 0, 0, 0]</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//比较数组</span></span><br><span class="line">        System.out.println(Arrays.equals(array, <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;));   </span><br><span class="line">        <span class="comment">//输出true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​                                            <strong>那么！有个奇怪的想法</strong></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5icTIzMy5jb20va2FucXEvcGljL3VwbG9hZC8yMDE4LzA5MjYvMTUzNzkzMDA1NjY3NDk0MS5qcGc?x-oss-process=image/format"></p>
+<p><strong>如果二维数组的话，直接用这些sort和toString方法会发生什么？</strong></p>
+<p>​    这时肯定有大佬来给出回答或者让我看API，但此时对初学的我来说，能将奇怪的想法用自我行动来解答，也不失为一次不错的体验。</p>
+<p>​    <strong>接着我们进行尝试：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] num2 = &#123;&#123;<span class="number">1</span>,<span class="number">22</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">8</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line">System.out.println(Arrays.toString(num2));</span><br><span class="line"> <span class="comment">// 结果：[[I@27973e9b, [I@312b1dae] 得到它们的引用地址</span></span><br><span class="line">Arrays.sort(num2); </span><br><span class="line"><span class="comment">// 直接报错java.lang.ClassCastException（java强制类型转换异常）</span></span><br></pre></td></tr></table></figure>
+<p>发现显然是不行的，我们只能访问到数组的引用地址。这时候Arrays类提供了deepToString方法可以实现这一功能：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> System.out.println(Arrays.deepToString(num2));</span><br><span class="line"><span class="comment">// [[1, 22, 3], [4, 8, 0]]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Arrays.deepToString()主要用于数组中还有数组的情况，而Arrays.toString()则相反，对于Arrays.toString()而言，当数组中有数组时，不会打印出数组中的内容，只会以地址的形式打印出来。</p>
+<p>如果要使用sort将二维数组进行排序的话，可以尝试修改它的排序规则，这里就不作讲述</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jiu_Chong_Yin/article/details/113728637">方法详解转载于此处</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45260767/article/details/105416349">数组转载参考于此处（1）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/whlwtj/article/details/114237189">数组转载参考于此处（2）</a></p>
 
     </div>
 
@@ -311,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">方法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">一、方法的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">二、方法的调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-number">2.3.</span> <span class="nav-text">三、方法的重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%8B%93%E5%B1%95"><span class="nav-number">2.4.</span> <span class="nav-text">四、拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%AF%A6%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">数组详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E5%88%9B%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">一、数组的声明和创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">二、数组初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.2.1.</span> <span class="nav-text">静态初始化:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.2.2.</span> <span class="nav-text">动态初始化:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">3.2.3.</span> <span class="nav-text">初始化默认值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.3.</span> <span class="nav-text">三、数组的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">3.3.1.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%92%8C%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">3.3.2.</span> <span class="nav-text">数组作为参数和返回值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">3.4.</span> <span class="nav-text">四、二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">3.4.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.4.2.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E7%BB%84%E5%B7%A5%E5%85%B7%E7%B1%BBArrays"><span class="nav-number">3.5.</span> <span class="nav-text">五、数组工具类Arrays</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -327,7 +454,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -340,7 +467,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
