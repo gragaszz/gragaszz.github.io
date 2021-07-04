@@ -20,30 +20,61 @@
     var CONFIG = {"hostname":"gragaszz.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="不要像水消失在水中">
-<meta property="og:type" content="website">
-<meta property="og:title" content="看不见我">
-<meta property="og:url" content="https://gragaszz.github.io/index.html">
+  <meta name="description" content="前言对SSM的学习多多少少已经有些认知了，很多都是围绕着Spring的核心IOC和AOP来实现的，除此之外，就是更加方便和快捷的为我们代码的架构设计，但总的来说也不过只是学习了其用法，至于具体的底层，等后续了   JDBC原始操作在学习之前，我觉得回顾一下jdbc在之前学习时候的用法吧： 123456789101112131415161718&#x2F;&#x2F;1. 导入驱动jar包        &#x2F;&#x2F;2.注册驱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis">
+<meta property="og:url" content="https://gragaszz.github.io/2021/07/03/Mybatis/index.html">
 <meta property="og:site_name" content="看不见我">
-<meta property="og:description" content="不要像水消失在水中">
+<meta property="og:description" content="前言对SSM的学习多多少少已经有些认知了，很多都是围绕着Spring的核心IOC和AOP来实现的，除此之外，就是更加方便和快捷的为我们代码的架构设计，但总的来说也不过只是学习了其用法，至于具体的底层，等后续了   JDBC原始操作在学习之前，我觉得回顾一下jdbc在之前学习时候的用法吧： 123456789101112131415161718&#x2F;&#x2F;1. 导入驱动jar包        &#x2F;&#x2F;2.注册驱">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/R2Xnfg.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/R2vQZq.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/RRSezD.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/RRn4Jg.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/RRKcUf.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210703215557448.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RfMkzF.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/RRJn1K.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/03/RRJwng.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210703223252669.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210703223634295.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RRbdHK.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RRLRk8.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RRXnGF.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RRXJIK.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RRxci6.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RWMw4K.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704130629148.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704132339362.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704152709928.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RWrDGF.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RWXu1e.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/04/RWX6hT.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704163751053.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704164539278.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704165538762.png">
+<meta property="og:image" content="https://gragaszz.github.io/.io//07/03/Mybatis/image-20210704171739687.png">
+<meta property="article:published_time" content="2021-07-03T10:21:13.000Z">
+<meta property="article:modified_time" content="2021-07-04T11:09:20.661Z">
 <meta property="article:author" content="Gragas">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/07/03/R2Xnfg.png">
 
-<link rel="canonical" href="https://gragaszz.github.io/">
+<link rel="canonical" href="https://gragaszz.github.io/2021/07/03/Mybatis/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>看不见我</title>
+  <title>Mybatis | 看不见我</title>
   
 
 
@@ -156,9 +187,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -174,10 +206,9 @@
       <meta itemprop="name" content="看不见我">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/03/Mybatis/" class="post-title-link" itemprop="url">Mybatis</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Mybatis
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -197,6 +228,13 @@
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -207,7 +245,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对SSM的学习多多少少已经有些认知了，很多都是围绕着Spring的核心IOC和AOP来实现的，除此之外，就是更加方便和快捷的为我们代码的架构设计，但总的来说也不过只是学习了其用法，至于具体的底层，等后续了</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对SSM的学习多多少少已经有些认知了，很多都是围绕着Spring的核心IOC和AOP来实现的，除此之外，就是更加方便和快捷的为我们代码的架构设计，但总的来说也不过只是学习了其用法，至于具体的底层，等后续了</p>
 <!--- more-->
 
 <h1 id="JDBC原始操作"><a href="#JDBC原始操作" class="headerlink" title="JDBC原始操作"></a>JDBC原始操作</h1><p>在学习之前，我觉得回顾一下jdbc在之前学习时候的用法吧：</p>
@@ -354,715 +392,34 @@
 
 <p>多对多同上</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/07/02/Spring-MVC2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/02/Spring-MVC2/" class="post-title-link" itemprop="url">Spring-MVC2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-07-02 16:40:04 / 修改时间：20:55:42" itemprop="dateCreated datePublished" datetime="2021-07-02T16:40:04+08:00">2021-07-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcM8hQ"><img src="https://z3.ax1x.com/2021/07/02/RcM8hQ.png" alt="RcM8hQ.png"></a></p>
-<p>当表单修改为上述类型的话，request.getParameter（）将失效</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcrH2R"><img src="https://z3.ax1x.com/2021/07/02/RcrH2R.png" alt="RcrH2R.png"></a></p>
-<img src="/.io//07/02/Spring-MVC2/image-20210702190104147.png" class title="image-20210702190104147">
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcgOEV"><img src="https://z3.ax1x.com/2021/07/02/RcgOEV.png" alt="RcgOEV.png"></a></p>
-<img src="/.io//07/02/Spring-MVC2/image-20210702185816401.png" class title="image-20210702185816401">
-
-<h1 id="SpringMVC拦截器"><a href="#SpringMVC拦截器" class="headerlink" title="SpringMVC拦截器"></a>SpringMVC拦截器</h1><blockquote>
-<p>类似于Servlet开发中的过滤器Filter，用于对处理器进行预处理和后处理</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rchbkt"><img src="https://z3.ax1x.com/2021/07/02/Rchbkt.png" alt="Rchbkt.png"></a></p>
-<h2 id="实现一：自定义拦截器"><a href="#实现一：自定义拦截器" class="headerlink" title="实现一：自定义拦截器"></a>实现一：自定义拦截器</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rc585q"><img src="https://z3.ax1x.com/2021/07/02/Rc585q.png" alt="Rc585q.png"></a></p>
-<p>实现这个接口HandlerInterceptor，这个接口的所有方法是default的。</p>
-<p>所以要自己实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myinterce</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//目标方法执行之前先执行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//根据返回值决定是否继续执行 </span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//在目标执行之后，视图返回之前</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, <span class="meta">@Nullable</span> ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception </span>&#123;   &#125;</span><br><span class="line">    <span class="comment">//整个流程执行完毕后</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, <span class="meta">@Nullable</span> Exception ex)</span> <span class="keyword">throws</span> Exception </span>&#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//说一下里面的属性：request、response不用说了，modelAndView能够获得里面封装的数据</span></span><br></pre></td></tr></table></figure>
-<p>配置好拦截器之后，就要实例化它，否则无法使用！</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            表示对哪些资源进行拦截操作--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--            表示不拦截操作哪些资源--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mvc:exclude-mapping</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.gragas.interceptor.myinterce&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对于多个拦截器的执行顺序，是根据实例化的顺序进行的</p>
-<p>展开说说方法</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcTnxK"><img src="https://z3.ax1x.com/2021/07/02/RcTnxK.png" alt="RcTnxK.png"></a></p>
-<h1 id="SpringMVC处理异常"><a href="#SpringMVC处理异常" class="headerlink" title="SpringMVC处理异常"></a>SpringMVC处理异常</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcbYGR"><img src="https://z3.ax1x.com/2021/07/02/RcbYGR.png" alt="RcbYGR.png"></a></p>
-<p>使用异常处理器的原因：介绍异常在代码中的耦合</p>
-<h2 id="方式一：使用mvc自带的异常处理器"><a href="#方式一：使用mvc自带的异常处理器" class="headerlink" title="方式一：使用mvc自带的异常处理器"></a>方式一：使用mvc自带的异常处理器</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rcq2tJ"><img src="https://z3.ax1x.com/2021/07/02/Rcq2tJ.png" alt="Rcq2tJ.png"></a></p>
-<p>里面只设置视图名称的前提是因为配置了视图解析器中的前缀和后缀</p>
-<h2 id="方式二：自定义异常处理器（实现接口）"><a href="#方式二：自定义异常处理器（实现接口）" class="headerlink" title="方式二：自定义异常处理器（实现接口）"></a>方式二：自定义异常处理器（实现接口）</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rcqh11"><img src="https://z3.ax1x.com/2021/07/02/Rcqh11.png" alt="Rcqh11.png"></a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现HandlerExceptionResolver接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">e</span> <span class="keyword">implements</span> <span class="title">HandlerExceptionResolver</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">            Exception表示异常对象</span></span><br><span class="line"><span class="comment">            ModelAndView ：跳转到错误视图信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">resolveException</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletRequest httpServletRequest,</span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletResponse httpServletResponse,</span></span></span><br><span class="line"><span class="function"><span class="params">            Object o,</span></span></span><br><span class="line"><span class="function"><span class="params">            Exception e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">		<span class="comment">//对异常进行判断</span></span><br><span class="line">        <span class="keyword">if</span> (e <span class="keyword">instanceof</span> ClassNotFoundException)&#123;</span><br><span class="line">            modelAndView.addObject(<span class="string">&quot;info&quot;</span>,<span class="string">&quot;类查找异常&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            modelAndView.addObject(<span class="string">&quot;info&quot;</span>,<span class="string">&quot;xxx异常&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">            modelAndView.setViewName(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后要实例化这个类</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.gragas.interceptor.e&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/28/Spring-MVC1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/28/Spring-MVC1/" class="post-title-link" itemprop="url">Spring-MVC1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-28 09:09:30" itemprop="dateCreated datePublished" datetime="2021-06-28T09:09:30+08:00">2021-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-04 17:43:42" itemprop="dateModified" datetime="2021-07-04T17:43:42+08:00">2021-07-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里是快速学习mvc的概念和运用，至于具体的实现，并没有在这里提到。不论文档还是视频，好像并没有具体展开对代码进行分析，文档是相较于视频学习有了更多细节上的知识学习。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/28/Spring-MVC1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/26/Spring4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/26/Spring4/" class="post-title-link" itemprop="url">Spring4</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-26 18:03:08 / 修改时间：21:42:10" itemprop="dateCreated datePublished" datetime="2021-06-26T18:03:08+08:00">2021-06-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这次学习的将会是Spring对于编程式（既通过Java代码）去操作数据库中的方法进行的一定的封装。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/26/Spring4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/02/Spring-MVC2/" rel="prev" title="Spring-MVC2">
+      <i class="fa fa-chevron-left"></i> Spring-MVC2
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/19/Spring3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/Spring3/" class="post-title-link" itemprop="url">Spring3</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-19 19:32:47" itemprop="dateCreated datePublished" datetime="2021-06-19T19:32:47+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-03 18:30:25" itemprop="dateModified" datetime="2021-07-03T18:30:25+08:00">2021-07-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Spring-中的事件处理"><a href="#Spring-中的事件处理" class="headerlink" title="Spring 中的事件处理"></a>Spring 中的事件处理</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/Spring3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/19/Spring2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/Spring2/" class="post-title-link" itemprop="url">Spring2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-19 13:26:52" itemprop="dateCreated datePublished" datetime="2021-06-19T13:26:52+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-04 18:58:16" itemprop="dateModified" datetime="2021-07-04T18:58:16+08:00">2021-07-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面了解了一下Spring的IOC，现在从配置文件转到对应的注解学习。加油</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/Spring2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/14/Spring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/14/Spring/" class="post-title-link" itemprop="url">Spring</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-14 13:15:17" itemprop="dateCreated datePublished" datetime="2021-06-14T13:15:17+08:00">2021-06-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-25 13:05:46" itemprop="dateModified" datetime="2021-06-25T13:05:46+08:00">2021-06-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>​    有段时间没记录了，也不是不记。只是记录在其他地方去了-&gt;语雀！现在准备做一点Spring框架的随笔。但是不打算看视频，想尝试看下文档学习，而且时间很紧迫，忧虑于秋招，所以抓紧！感觉看视频和文档学习的差别主要在于内容细粒度方面吧。毕竟视频是为了快速上手，会教一下常用的。而文档一开始感觉属实迷，后面发现算是层层递进吧，一点一点引入各个模块学习。</p>
-<p>​</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/14/Spring/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/03/28/Day-three/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/28/Day-three/" class="post-title-link" itemprop="url">Day-three</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-28 10:08:29" itemprop="dateCreated datePublished" datetime="2021-03-28T10:08:29+08:00">2021-03-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-29 00:14:30" itemprop="dateModified" datetime="2021-03-29T00:14:30+08:00">2021-03-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    在对基础进行汇总的时候，发现度娘上面的的确确有很多很棒的内容，所以emmm我当然选择做了搬运工，当然然白嫖很可耻，所以我再最下面都有传送门标注原作者好的吧！在看别人博客的同时，我发现除了写知识以外，可以将自己的想法也写下来同时加以验证，感觉太棒了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/28/Day-three/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/03/19/Day-two/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/19/Day-two/" class="post-title-link" itemprop="url">Java学习-Day-two</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-19 09:11:18" itemprop="dateCreated datePublished" datetime="2021-03-19T09:11:18+08:00">2021-03-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-28 10:07:33" itemprop="dateModified" datetime="2021-03-28T10:07:33+08:00">2021-03-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    发现的的确确不太会排版嗷，但继续保持拉，总会好起来的嘛，还有上一次的图片发现无法加载，度娘了一下好像也不太适合，后面问朋友发现可以将图片再网站托管，用上传后返回的链接，着实可以。保存图片的地方用的图床！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/19/Day-two/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/03/17/Day_one/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/17/Day_one/" class="post-title-link" itemprop="url">Java学习-Day-One</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-17 13:05:04" itemprop="dateCreated datePublished" datetime="2021-03-17T13:05:04+08:00">2021-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-25 12:40:48" itemprop="dateModified" datetime="2021-03-25T12:40:48+08:00">2021-03-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        其实之前一直都是在很零碎的学习，所谓的宽度和深度可以说几乎没有，学的是十分的空洞，所以不管是说为了现在还是方便未来，就想把一些觉得可以记录的东西给放到这里把，暂且将它当作我学习的一些心得，和做笔记一样。因为也刚开始嘛，就当作新手村练习，不论知识还是笔记的排版，都先做出来，有待日后的更正！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/17/Day_one/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1114,6 +471,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC%E5%8E%9F%E5%A7%8B%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">JDBC原始操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">Mybatis基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis%E7%AE%80%E4%BB%8B"><span class="nav-number">3.1.</span> <span class="nav-text">Mybatis简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">3.2.</span> <span class="nav-text">Mybatis的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">3.3.</span> <span class="nav-text">Mybatis配置文件的概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.1.</span> <span class="nav-text">映射文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.2.</span> <span class="nav-text">核心文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis%E7%9A%84API"><span class="nav-number">3.4.</span> <span class="nav-text">Mybatis的API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis%E5%8A%A8%E6%80%81%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.</span> <span class="nav-text">Mybatis动态语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%8A%BD%E5%8F%96"><span class="nav-number">5.</span> <span class="nav-text">SQL语句的抽取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeHandlers%E6%A0%87%E7%AD%BE"><span class="nav-number">6.</span> <span class="nav-text">typeHandlers标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#plugins%E6%A0%87%E7%AD%BE"><span class="nav-number">7.</span> <span class="nav-text">plugins标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">8.</span> <span class="nav-text">多表查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="nav-number">8.0.0.1.</span> <span class="nav-text">一对一查询：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A%EF%BC%9A"><span class="nav-number">8.0.0.2.</span> <span class="nav-text">一对多：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="nav-number">9.</span> <span class="nav-text">注解开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80CRUD"><span class="nav-number">9.0.1.</span> <span class="nav-text">基础CRUD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80"><span class="nav-number">9.0.2.</span> <span class="nav-text">一对一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A"><span class="nav-number">9.0.3.</span> <span class="nav-text">一对多</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

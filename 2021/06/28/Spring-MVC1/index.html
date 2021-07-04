@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://z3.ax1x.com/2021/07/02/Ryxt0K.png">
 <meta property="og:image" content="https://z3.ax1x.com/2021/07/02/Ryxc0f.png">
 <meta property="article:published_time" content="2021-06-28T01:09:30.000Z">
-<meta property="article:modified_time" content="2021-07-03T06:11:09.393Z">
+<meta property="article:modified_time" content="2021-07-04T09:43:42.540Z">
 <meta property="article:author" content="Gragas">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-03 14:11:09" itemprop="dateModified" datetime="2021-07-03T14:11:09+08:00">2021-07-03</time>
+                <time title="修改时间：2021-07-04 17:43:42" itemprop="dateModified" datetime="2021-07-04T17:43:42+08:00">2021-07-04</time>
               </span>
 
           
@@ -330,14 +330,14 @@
 <p><strong>基本类型数据，POJO类型数据，数组数据，集合类型数据</strong></p>
 <p>先进行的说明:</p>
 <p>请求的参数一定要对应方法中的形参名，否则无法被接收，也不会报错。</p>
-<p>其次可以通过注解让请求参数绑定形参@RequestMapping，其内部有如下常用的属性</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（value = <span class="string">&quot;message&quot;</span>,required = <span class="keyword">false</span>,defaultValue = <span class="string">&quot;dd&quot;</span>）</span><br><span class="line">    <span class="comment">//默认情况下直接输入String代表value，表示请求参数名</span></span><br><span class="line">    <span class="comment">//required表示该请求参数必须存在（可以为&quot;&quot;,但必须有）</span></span><br><span class="line">    <span class="comment">//defaultValue表示默认参数值</span></span><br></pre></td></tr></table></figure>
+<p>其次可以通过注解让请求参数绑定形参@RequestParam，其内部有如下常用的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（value = <span class="string">&quot;message&quot;</span>,required = <span class="keyword">false</span>,defaultValue = <span class="string">&quot;dd&quot;</span>）</span><br><span class="line">    <span class="comment">//默认情况下直接输入代表value，表示请求参数名</span></span><br><span class="line">    <span class="comment">//required表示该请求参数必须存在（可以为&quot;&quot;,但必须有）</span></span><br><span class="line">    <span class="comment">//defaultValue表示默认参数值</span></span><br></pre></td></tr></table></figure>
 <p>其次就是讲一下restful风格，即使用/来拼接参数，如/a/b相当于a=xx&amp;b=xx</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;.../&#123;a&#125;/&#123;b&#125;&quot;)</span>&#123;&#125;内表示对应的请求的参数名</span><br></pre></td></tr></table></figure>
-<p>使用@PathVariable来接收，属性和前面的@RequestMapping一样。</p>
+<p>使用@PathVariable来接收，属性和前面的@RequestParam一样。</p>
 <p>现在分别说下四种情况的获取情况：</p>
 <p><strong>基本数据</strong>：会进行基于字符串类型的自动转换，比如你传参11，既可以为int也可以为String，但是“aa”不能为int。嗯，这个不用说了吧</p>
-<p><strong>POJO类型数据</strong>：就是简单的bean类型，如果设置为参数，它会自动将请求参数根据set的属性封装到里面去，没有就为null。嗯，不要为设置@RequestMapping会怎么样，那你就传一个真正的User类给它吧。</p>
+<p><strong>POJO类型数据</strong>：就是简单的bean类型，如果设置为参数，它会自动将请求参数根据set的属性封装到里面去，没有就为null。嗯，不要问设置@RequestParam会怎么样，那你就传一个真正的User类给它吧。</p>
 <p><strong>数组数据</strong>：只要形参名一样就行，接受类型也一样,比如String[] hobby;请求参数：hobby=”running”&amp;hobby=”sing”</p>
 <p><strong>集合类型数据</strong>：集合则是和POJO类似。要将集合作为属性封装到一个对象里面，一般称为VO，然后就是前端提交时，name要和集合名一样，然后由于是集合类型，所以要加一个【i】表示元素顺序。</p>
 <p>说白了，集合没办法被直接传过去，只能作为属性被封装到一个对象中（个人理解）</p>
@@ -564,7 +564,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
