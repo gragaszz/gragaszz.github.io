@@ -350,7 +350,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-07 00:41:18" itemprop="dateModified" datetime="2021-07-07T00:41:18+08:00">2021-07-07</time>
+                <time title="修改时间：2021-07-07 11:08:45" itemprop="dateModified" datetime="2021-07-07T11:08:45+08:00">2021-07-07</time>
               </span>
 
           
@@ -552,6 +552,36 @@
 <img src="/.io//07/03/Mybatis/image-20210707003646738.png" class title="image-20210707003646738">
 
 <img src="/.io//07/03/Mybatis/image-20210707003713164.png" class title="image-20210707003713164">
+
+<h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R7bFOS"><img src="https://z3.ax1x.com/2021/07/07/R7bFOS.png" alt="R7bFOS.png"></a></p>
+<h2 id="Mybatis缓存"><a href="#Mybatis缓存" class="headerlink" title="Mybatis缓存"></a>Mybatis缓存</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R7qJu8"><img src="https://z3.ax1x.com/2021/07/07/R7qJu8.png" alt="R7qJu8.png"></a></p>
+<img src="/.io//07/03/Mybatis/image-20210707102401318.png" class title="image-20210707102401318">
+
+<h2 id="一级缓存"><a href="#一级缓存" class="headerlink" title="一级缓存"></a>一级缓存</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R7LJR1"><img src="https://z3.ax1x.com/2021/07/07/R7LJR1.png" alt="R7LJR1.png"></a></p>
+<p>一级缓存是默认的，但是只作用于一次sqlsession中。</p>
+<h2 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h2><img src="/.io//07/03/Mybatis/image-20210707101750009.png" class title="image-20210707101750009">
+
+<p>先开启缓存，在mybatis配置中：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;cacheEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在mapper.xml最上边中可以设置这个属性：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span> <span class="attr">eviction</span>=<span class="string">&quot;&quot;</span> <span class="attr">flushInterval</span>=<span class="string">&quot;&quot;</span> <span class="attr">readOnly</span>=<span class="string">&quot;&quot;</span> <span class="attr">size</span>=<span class="string">&quot;&quot;</span>/&gt;</span> 可以只写<span class="tag">&lt;<span class="name">cache</span>/&gt;</span>  </span><br></pre></td></tr></table></figure>
+<p>eviction:缓存类型/机制</p>
+<p>flushInterval:刷新时间</p>
+<p>readOnly:是否只读</p>
+<p>size：存储结果对象或列表的引用个数</p>
+<img src="/.io//07/03/Mybatis/image-20210707105735103.png" class title="image-20210707105735103">
+
+<p>缓存原理：</p>
+<img src="/.io//07/03/Mybatis/image-20210707110211934.png" class title="image-20210707110211934">
+
+<p>自定义缓存:</p>
+<p>Ehcache是一种广泛使用的开源Java分布式缓存。主要面向通用缓存</p>
+<p>先导包</p>
+<p> 然后在<cache>标签中设置type来选择第三方缓存</cache></p>
+<p>添加新的ehcache.xml，来设置这个缓存的配置</p>
+<p>不会用就百度，不常记。现在redis用的比较多</p>
+<p>除了调用第三方缓存，自己可以写一个,实现Cache接口</p>
+
       
     </div>
 
