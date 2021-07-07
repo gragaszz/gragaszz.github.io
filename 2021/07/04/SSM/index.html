@@ -20,30 +20,38 @@
     var CONFIG = {"hostname":"gragaszz.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="不要像水消失在水中">
-<meta property="og:type" content="website">
-<meta property="og:title" content="看不见我">
-<meta property="og:url" content="https://gragaszz.github.io/index.html">
+  <meta name="description" content="SSM的整合至此，实际上对于ssm的学习算是告一段落了，对于我们来说虽然不清楚它的实现过程，但也是主要明白这些框架的用法并且对于它的一些思想是有些许了解的。但是在学习spring、springmvc、mybatis中则是分开来学的，所以这里我们江他们进行汇总，看看之间的联系。 SS的整合这次之前我看了一篇文章，因为在视频学习的时候发现了如果使用了注解来进行开发的话，要进行包扫描。但是在spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM">
+<meta property="og:url" content="https://gragaszz.github.io/2021/07/04/SSM/index.html">
 <meta property="og:site_name" content="看不见我">
-<meta property="og:description" content="不要像水消失在水中">
+<meta property="og:description" content="SSM的整合至此，实际上对于ssm的学习算是告一段落了，对于我们来说虽然不清楚它的实现过程，但也是主要明白这些框架的用法并且对于它的一些思想是有些许了解的。但是在学习spring、springmvc、mybatis中则是分开来学的，所以这里我们江他们进行汇总，看看之间的联系。 SS的整合这次之前我看了一篇文章，因为在视频学习的时候发现了如果使用了注解来进行开发的话，要进行包扫描。但是在spring">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/05/R5cLBF.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/06/RIWbpd.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/06/RIhRZ6.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/07/R755md.png">
+<meta property="article:published_time" content="2021-07-04T12:01:24.000Z">
+<meta property="article:modified_time" content="2021-07-07T01:46:40.008Z">
 <meta property="article:author" content="Gragas">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/07/05/R5cLBF.png">
 
-<link rel="canonical" href="https://gragaszz.github.io/">
+<link rel="canonical" href="https://gragaszz.github.io/2021/07/04/SSM/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>看不见我</title>
+  <title>SSM | 看不见我</title>
   
 
 
@@ -156,9 +164,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -174,10 +183,9 @@
       <meta itemprop="name" content="看不见我">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/04/SSM/" class="post-title-link" itemprop="url">SSM</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          SSM
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -197,6 +205,13 @@
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -207,7 +222,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="SSM的整合"><a href="#SSM的整合" class="headerlink" title="SSM的整合"></a>SSM的整合</h1><p>至此，实际上对于ssm的学习算是告一段落了，对于我们来说虽然不清楚它的实现过程，但也是主要明白这些框架的用法并且对于它的一些思想是有些许了解的。但是在学习spring、springmvc、mybatis中则是分开来学的，所以这里我们江他们进行汇总，看看之间的联系。</p>
+        <h1 id="SSM的整合"><a href="#SSM的整合" class="headerlink" title="SSM的整合"></a>SSM的整合</h1><p>至此，实际上对于ssm的学习算是告一段落了，对于我们来说虽然不清楚它的实现过程，但也是主要明白这些框架的用法并且对于它的一些思想是有些许了解的。但是在学习spring、springmvc、mybatis中则是分开来学的，所以这里我们江他们进行汇总，看看之间的联系。</p>
 <h2 id="SS的整合"><a href="#SS的整合" class="headerlink" title="SS的整合"></a>SS的整合</h2><p>这次之前我看了一篇文章，因为在视频学习的时候发现了如果使用了注解来进行开发的话，要进行包扫描。但是在spring的配置中来说，包扫描要排除control层的文件！要另外在对应web.xml设置加载的mvc.xml文件中进行扫描！</p>
 <p>这就很迷惑了？所以我直接面向了百度：</p>
 <p><strong>原因：</strong>Spring 是父容器， Spring MVC是子容器， 子容器可以访问父容器的bean,父容器不能访问子容器的bean。 </p>
@@ -301,885 +316,34 @@
 <h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>自己对着以前的小项目写了下大致流程，后面看到掘金上的一篇文章觉得很详细而且过程清晰，所以做了第二次文件配置的修改，感谢。下面指路：</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904099545088014">RudeCrab</a></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/07/03/Mybatis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/03/Mybatis/" class="post-title-link" itemprop="url">Mybatis</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-03 18:21:13" itemprop="dateCreated datePublished" datetime="2021-07-03T18:21:13+08:00">2021-07-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-07 00:41:18" itemprop="dateModified" datetime="2021-07-07T00:41:18+08:00">2021-07-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对SSM的学习多多少少已经有些认知了，很多都是围绕着Spring的核心IOC和AOP来实现的，除此之外，就是更加方便和快捷的为我们代码的架构设计，但总的来说也不过只是学习了其用法，至于具体的底层，等后续了</p>
-<!--- more-->
-
-<h1 id="JDBC原始操作"><a href="#JDBC原始操作" class="headerlink" title="JDBC原始操作"></a>JDBC原始操作</h1><p>在学习之前，我觉得回顾一下jdbc在之前学习时候的用法吧：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 导入驱动jar包</span></span><br><span class="line">        <span class="comment">//2.注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">        <span class="comment">//3.获取数据库连接对象</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://localhost:3306/db3&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;root&quot;</span>);</span><br><span class="line">    (由于MySQL版本过高 这里的实现应该是：Connection con = DriverManager.getConnection</span><br><span class="line"> (<span class="string">&quot;jdbc:mysql://localhost:3306/db1?serverTimezone=UTC&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;root&quot;</span>);)</span><br><span class="line">        <span class="comment">//4.定义sql语句</span></span><br><span class="line">        String sql = <span class="string">&quot;update account set balance = 500 where id = 1&quot;</span>;</span><br><span class="line">        <span class="comment">//5.获取执行sql的对象 Statement</span></span><br><span class="line">        Statement stmt = conn.createStatement();</span><br><span class="line">        <span class="comment">//6.执行sql</span></span><br><span class="line">        <span class="keyword">int</span> count = stmt.executeUpdate(sql);</span><br><span class="line">        <span class="comment">//7.处理结果</span></span><br><span class="line">        System.out.println(count);</span><br><span class="line">        <span class="comment">//8.释放资源</span></span><br><span class="line">        stmt.close();</span><br><span class="line">        conn.close();</span><br></pre></td></tr></table></figure>
-<p>然后为了不用经常写反复使用的代码，我们将前面注册和连接的操作封装进了一个Util工具类。这里不写（没找到代码）</p>
-<blockquote>
-<p>因为每次获取对数据库连接对象实际上是向系统底层进行申请，这个过程是十分消耗时间和资源的。为此引入<strong>池</strong>的概念，提前申请数据库连接容器，便于用户的访问</p>
-</blockquote>
-<p>所以又学习了两种连接池技术C3P0和Druid：实际上对于驱动的注册放到了池里面去，其他的并没有什么太多变化:</p>
-<p><strong>C3P0</strong>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、导入jar包 (两个):c3p0-<span class="number">0.9</span><span class="number">.5</span><span class="number">.2</span>.jar mchange-commons-java-<span class="number">0.2</span><span class="number">.12</span>.jar</span><br><span class="line">   (数据库驱动jar包也要导入)</span><br><span class="line"> <span class="number">2.</span> 定义配置文件：(可以设置多个配置对象)</span><br><span class="line">     * 名称： c3p0.properties 或者 c3p0-config.xml</span><br><span class="line">           * 路径：直接将文件放在src目录下即可</span><br><span class="line">   <span class="number">3.</span> 创建核心对象 数据库连接池对象 ComboPooledDataSource  </span><br><span class="line">     <span class="comment">// DataSource ds  = new ComboPooledDataSource(配置名称 空参则使用默认配置对象);</span></span><br><span class="line"> <span class="number">4.</span> 获取连接： getConnection 连接对象数量由maxPoolSize决定。如果获取对象溢出，则会报错</span><br><span class="line">     <span class="comment">//Connection conn = ds.getConnection();</span></span><br></pre></td></tr></table></figure>
-<p><strong>Druid</strong>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、导入jar包 :druid-<span class="number">1.0</span><span class="number">.9</span>.jar   (数据库驱动jar包也要导入)</span><br><span class="line"> <span class="number">2.</span> 定义配置文件：(和前面的工具类配置文件类似，所以需要读取)</span><br><span class="line">     * 是properties形式的</span><br><span class="line">     * 可以叫任意名称，可以放在任意目录下</span><br><span class="line">   <span class="number">3.</span> 加载配置文件。Properties</span><br><span class="line">   <span class="number">4.</span> 创建核心对象 通过工厂来来获取  DruidDataSourceFactory  </span><br><span class="line">     <span class="comment">// DataSource ds = DruidDataSourceFactory.createDataSource(Properties对象/Map对象);</span></span><br><span class="line"> <span class="number">5.</span> 获取连接： getConnection 连接对象数量由maxPoolSize决定。如果获取对象溢出，则会报错</span><br><span class="line">     <span class="comment">//Connection conn = ds.getConnection();</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">由于每次调用需要加载配置文件，所以也创建一个工具类便于调用</span><br><span class="line">一 定义一个类 JDBCUtils</span><br><span class="line">二 提供静态代码块加载配置文件，初始化连接池对象</span><br><span class="line">三 提供方法</span><br><span class="line">	1. 获取连接方法：通过数据库连接池获取连接</span><br><span class="line">	2. 释放资源</span><br><span class="line">	3. 获取连接池的方法</span><br></pre></td></tr></table></figure>
-<p>后来的后来，直接就学了个JDBCTemplate</p>
-<blockquote>
-<p>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">实现:	</span><br><span class="line">	1. 导入jar包(自行百度)</span><br><span class="line">	2. 创建JdbcTemplate对象。依赖于数据源DataSource（所以感觉和数据库连接池有关）</span><br><span class="line">		&#x2F;&#x2F; JdbcTemplate template &#x3D; new JdbcTemplate(DataSource对象);</span><br><span class="line">	3. 调用JdbcTemplate的方法来完成CRUD的操作</span><br><span class="line">		* update():执行DML语句。增、删、改语句</span><br><span class="line">		* queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</span><br><span class="line">			* 注意：这个方法查询的结果集长度只能是1</span><br><span class="line">		* queryForList():查询结果将结果集封装为list集合</span><br><span class="line">			* 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</span><br><span class="line">		* query():查询结果，将结果封装为JavaBean对象</span><br><span class="line">			* query的参数：RowMapper</span><br><span class="line">				* 一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</span><br><span class="line">				* new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</span><br><span class="line">		* queryForObject：查询结果，将结果封装为对象</span><br><span class="line">			* 一般用于聚合函数的查询</span><br></pre></td></tr></table></figure>
-<p>相比于前面的技术，它是基于数据源datasource进行创建对象的。最为关键的我觉得就是它内部封装了各种对数据库查询结果的返回。</p>
-<p>这里就是我前面学习的，下面我们截视频的图看看最一开始jdbc的缺点：</p>
-<p><strong>缺点分析</strong>：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R2Xnfg"><img src="https://z3.ax1x.com/2021/07/03/R2Xnfg.png" alt="R2Xnfg.png"></a></p>
-<p>所以，这就是我们学习mybatis的原因：</p>
-<h1 id="Mybatis基础"><a href="#Mybatis基础" class="headerlink" title="Mybatis基础"></a>Mybatis基础</h1><h2 id="Mybatis简介"><a href="#Mybatis简介" class="headerlink" title="Mybatis简介"></a>Mybatis简介</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R2vQZq"><img src="https://z3.ax1x.com/2021/07/03/R2vQZq.png" alt="R2vQZq.png"></a></p>
-<h2 id="Mybatis的执行"><a href="#Mybatis的执行" class="headerlink" title="Mybatis的执行"></a>Mybatis的执行</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRSezD"><img src="https://z3.ax1x.com/2021/07/03/RRSezD.png" alt="RRSezD.png"></a></p>
-<h2 id="Mybatis配置文件的概述"><a href="#Mybatis配置文件的概述" class="headerlink" title="Mybatis配置文件的概述"></a>Mybatis配置文件的概述</h2><h3 id="映射文件"><a href="#映射文件" class="headerlink" title="映射文件"></a>映射文件</h3><p>对于映射文件（相当于以前的daoImpl）：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--映射文件DTD约束头，相当于标签规范--&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--namespace绑定对应的dao/mapper接口--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;gargas.dao.userMapper&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    id表示对应的方法名 resultType：封装类型--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserList&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;gargas.domain.user&quot;</span>&gt;</span></span><br><span class="line">    select * from user</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--parameterType能够自动将bean对象分成对应的属性，#&#123;属性&#125;--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;addName&quot;</span>  <span class="attr">parameterType</span>=<span class="string">&quot;gargas.domain.user&quot;</span>&gt;</span></span><br><span class="line">     insert into user values (#&#123;id&#125;,#&#123;name&#125;,#&#123;pwd&#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;addUser2&quot;</span>  <span class="attr">parameterType</span>=<span class="string">&quot;map&quot;</span>&gt;</span></span><br><span class="line">     insert into user values (#&#123;userid&#125;,#&#123;username&#125;,#&#123;userpwd&#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--对于CRUD有对应的标签：insert update update delete--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Mybatis默认不提交的，要自己提交</p>
-<p>对于这里配置的crud语句的操作，这里讲几个点：</p>
-<p>如果传入的是bean对象，不用再通过bean.get()方法获取，但是用#{bean属性名}</p>
-<p>对于数据的变动，需要自己提交事务，即sqlSession.commit()</p>
-<p>最后建议就是释放资源sqlSession.close();</p>
-<h3 id="核心文件"><a href="#核心文件" class="headerlink" title="核心文件"></a>核心文件</h3><p>一般名字叫做mybatis-config.xml（类似于web.xml）</p>
-<p>这里给出核心配置的标签：</p>
-<p><img src="https://z3.ax1x.com/2021/07/03/RRn4Jg.png" alt="RRn4Jg.png"></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--映射文件DTD约束头，相当于标签规范--&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--environments能存放多个环境，相当于配置数据库的连接</span></span><br><span class="line"><span class="comment">		default 表示要使用的环境名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--environment表示环境,id表示环境名 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--transactionManager 表示事务管理类型--&gt;</span>     </span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>/&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--表示数据源类型是连接池--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置数据源参数--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql:///mybatis?serverTimezone=UTC<span class="symbol">&amp;amp;</span>characterEncoding=utf-8&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--表示要加载的映射文件，说白了就是为了能找到执行sql的语句--&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;gargas/dao/userMapper.xml&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对于<configuration>来说就是用来涵盖我们其他标签的，可是，要按照它的配置顺序:</configuration></p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The content of element type &quot;configuration&quot; must match &quot;(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,objectWrapperFactory?,reflectorFactory?,plugins?,environments?,databaseIdProvider?,mappers?)&quot;.</span><br></pre></td></tr></table></figure>
-
-
-<p>对于<environment>类的标签，实际上在学习jdbc的时候都能看懂。但<transactionManager type="JDBC">和<dataSource type="POOLED">存在的类型则是我们比较好奇的:</dataSource></transactionManager></environment></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRKcUf"><img src="https://z3.ax1x.com/2021/07/03/RRKcUf.png" alt="RRKcUf.png"></a></p>
-<p>对于<dataSource type="。。。">中的标签来说，其内部的属性可以向外部资源获取。通过<properties resource></properties>获取，然后用${key}获取对应属性</dataSource></p>
-<p>对于标签<typeAliases></typeAliases>是用来配置别名的，对于一些基本类型的话，Spring已经是定义了一些别名：</p>
-<img src="/.io//07/03/Mybatis/image-20210703215557448.png" class title="image-20210703215557448">
-
-<p>所以！！这里别名基本上是为了给我们的bean类进行别名设置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">type</span>=<span class="string">&quot;全限定类名&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;别名&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">typeAlias</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>或者使用<package>包扫描，这个是将包下面的实体类取别名，一般为实体类的名字或者首字母小写的名字</package></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RfMkzF"><img src="https://z3.ax1x.com/2021/07/04/RfMkzF.png" alt="RfMkzF.png"></a></p>
-<h2 id="Mybatis的API"><a href="#Mybatis的API" class="headerlink" title="Mybatis的API"></a>Mybatis的API</h2><p>可以分成三种：工厂、sql执行对象、映射对象</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRJn1K"><img src="https://z3.ax1x.com/2021/07/03/RRJn1K.png" alt="RRJn1K.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRJwng"><img src="https://z3.ax1x.com/2021/07/03/RRJwng.png" alt="RRJwng.png"></a></p>
-<p>对于sql语句的使用有两种情况：</p>
-<p>一是直接通过SqlSession对象直接操作，它提供了crud的方法</p>
-<img src="/.io//07/03/Mybatis/image-20210703223252669.png" class title="image-20210703223252669">
-
-<p>里面的String statement是传入指定映射文件的方法名，比如”userMapper.getUserList”</p>
-<p>parameter就是传入参数</p>
-<p>selectone就是查询一个对象，相当于JdbcTemplate.queryForObject,毕竟内部应该使用了JdbcTemplate（猜测）</p>
-<p>二是SqlSession.getMapper(。。。)获取对应的映射对象：</p>
-<p>一般里面传入的是mapper.xml对应的接口类</p>
-<p>然后直接通过mapper对象调用方法</p>
-<p>还有就是对于事务的提交，都是通过SqlSession的进行的。</p>
-<img src="/.io//07/03/Mybatis/image-20210703223634295.png" class title="image-20210703223634295">
-
-<h1 id="Mybatis动态语句"><a href="#Mybatis动态语句" class="headerlink" title="Mybatis动态语句"></a>Mybatis动态语句</h1><p>何为动态语句？意思相当于在运行的过程中，根据用户的不同需求进行sql语句上的调整查询。比如说根据条件进行查询并返回数据。</p>
-<p>虽然我们可以在service层对条件进行筛选后再进行查询，可是这样子就违背了我们各司其职的道理。所以这里学习在Mybatis中配置动态条件。</p>
-<p>而动态的配置条件，实际上是进行判断，所以这里有几个学习的标签：</p>
-<ul>
-<li>if</li>
-<li>choose(when,otherwise)</li>
-<li>trim(where,set)</li>
-<li>foreach</li>
-</ul>
-<p>对于 if来说：一般针对条件的增删</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserByCondition&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;user&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line">    select * from user where 1 = 1</span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;id!=0&quot;</span>&gt;</span></span><br><span class="line">        and id = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;pwd=0&quot;</span>&gt;</span></span><br><span class="line">            and pwd = #&#123;id&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对于foreach来说：一般针对数组和集合这种多数据量</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserByCondition&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;user&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line">    select * from user</span><br><span class="line">  <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">&quot;list&quot;</span> <span class="attr">open</span>=<span class="string">&quot;id in (&quot;</span> <span class="attr">close</span>=<span class="string">&quot;)&quot;</span> <span class="attr">item</span>=<span class="string">&quot;id&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;,&quot;</span>&gt;</span></span><br><span class="line">                #&#123;id&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--where语句相当于用了where collection表示传入的类型array/list open表示起始语句 close表示结束 item相当于循环中用的参数 separator则是分割参数的符号 --&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="SQL语句的抽取"><a href="#SQL语句的抽取" class="headerlink" title="SQL语句的抽取"></a>SQL语句的抽取</h1><p>简单来说，就是减少重复代码，便于我们的修改。比如对于sql的查询语句，如果前面都是为了将所有信息进行查询，只是后面条件需要修改的话，我们可以将前面select * from抽取出来，便于后面需要统一修改的情况。</p>
-<p>用法:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--id表示给这个语句命名，有需要的就引用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;select&quot;</span>&gt;</span>select * from user<span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;select&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="typeHandlers标签"><a href="#typeHandlers标签" class="headerlink" title="typeHandlers标签"></a>typeHandlers标签</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRbdHK"><img src="https://z3.ax1x.com/2021/07/04/RRbdHK.png" alt="RRbdHK.png"></a></p>
-<p>如下图：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRLRk8"><img src="https://z3.ax1x.com/2021/07/04/RRLRk8.png" alt="RRLRk8.png"></a></p>
-<p>在setNonNullParameter方法中通过preparedStatement来setXXX设置，其中i表示要存储的位置，date表示我们存储的数据。通过date.xxx将数据转换成我们希望存在数据库的格式：比如转换成long类型</p>
-<p>getNonNullParameter中的resultSet表示查询后的结果集，然后String s和int i分别表示字段名和字段位置，通过resultSet.getxxx()来获取要转换的数据</p>
-<p>callableStatement也是</p>
-<p>这是对数据库结构方面的设置，所以要注册到对应的mybatis配置中：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRXnGF"><img src="https://z3.ax1x.com/2021/07/04/RRXnGF.png" alt="RRXnGF.png"></a></p>
-<h1 id="plugins标签"><a href="#plugins标签" class="headerlink" title="plugins标签"></a>plugins标签</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRXJIK"><img src="https://z3.ax1x.com/2021/07/04/RRXJIK.png" alt="RRXJIK.png"></a></p>
-<p>导入配置:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    分页插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.jsqlparser<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jsqlparser<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在mybatis中设置配置：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span> <span class="attr">interceptor</span>=<span class="string">&quot;com.github.pagehelper.PageHelper&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dialect&quot;</span> <span class="attr">value</span>=<span class="string">&quot;mysql&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>PS:4.0以后这个插件就不在使用这个PageHelper接口，而是PageInterceptor。</p>
-<p>并且会自动识别使用的数据库，而不需要再设置属性</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span> <span class="attr">interceptor</span>=<span class="string">&quot;com.github.pagehelper.PageInterceptor&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            &lt;property name=&quot;dialect&quot; value=&quot;mysql&quot;/&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在获取数据的方法前使用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//        当前页+每页显示的条数</span></span><br><span class="line">        PageHelper.startPage(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-<p>至于分页相关的参数：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RRxci6"><img src="https://z3.ax1x.com/2021/07/04/RRxci6.png" alt="RRxci6.png"></a></p>
-<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><p>这里主要提到一个情况：一般来说不论是结果的返回还是参数的传入。它的自动装配都是基于get和set对应的属性名。当传入的参数和结果中有其他属性名的话，是不会被获取到的。</p>
-<p>这时就可以使用Map相关的存储</p>
-<p>比如我前端在验证时，传递的信息我没有对应的bean封装，就可以将所有信息存入map（key-value）存储，然后sql语句的参数对应key即可</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;addUser2&quot;</span>  <span class="attr">parameterType</span>=<span class="string">&quot;map&quot;</span>&gt;</span></span><br><span class="line">   insert into user values (#&#123;userid&#125;,#&#123;username&#125;,#&#123;userpwd&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>而对于信息的查询来说，如果内部属性有个bean的话，它不会自动封装进去。比如student类中有一个学科bean对象，通过多表联合查询能查出关于学科的各种信息，但是返回的时候不会装入学科这个属性中，因为匹配不了字段</p>
-<h4 id="一对一查询："><a href="#一对一查询：" class="headerlink" title="一对一查询："></a>一对一查询：</h4><p>所以我们要设置一个map去映射到对应的类中(一一对应):</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RWMw4K"><img src="https://z3.ax1x.com/2021/07/04/RWMw4K.png" alt="RWMw4K.png"></a></p>
-<p><strong>id表示主键，至于对应的type和下面的type都是设定了别名的原因</strong></p>
-<p>或者可以将联合的bean通过association标签连接(在resultMap中):</p>
-<img src="/.io//07/03/Mybatis/image-20210704130629148.png" class title="image-20210704130629148">
-
-<h4 id="一对多："><a href="#一对多：" class="headerlink" title="一对多："></a>一对多：</h4><img src="/.io//07/03/Mybatis/image-20210704132339362.png" class title="image-20210704132339362">
-
-<p>前面都是相同的流程，唯一不同是因为一对多的话，能有多个bean属性对象，即用集合作为属性存储。所以用collection标签</p>
-<p>多对多查询：</p>
-<p>和一对多一样实际上，比如：一个员工对应多种岗位，1种岗位也可以对应多个员工。但这并不影响我们的查询，只要员工类中存在岗位这个属性集合，并且查询语句中正确就可以了，因为是一一映射，独立存在，不会存在交集。</p>
-<img src="/.io//07/03/Mybatis/image-20210704152709928.png" class title="image-20210704152709928">
-
-<p>如果希望没有岗位的员工也存在，就修改sql语句：通过左连接。（不知道就回顾mysql语句）</p>
-<p>这里抛出一个问题：如果是表单复选框中的选项要怎么存入mysql</p>
-<h1 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RWrDGF"><img src="https://z3.ax1x.com/2021/07/04/RWrDGF.png" alt="RWrDGF.png"></a></p>
-<p>简化xml的配置</p>
-<p>使用注解，像Spring一样不使用xml文件，直接在对应的类/接口上设置</p>
-<h3 id="基础CRUD"><a href="#基础CRUD" class="headerlink" title="基础CRUD"></a>基础CRUD</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RWXu1e"><img src="https://z3.ax1x.com/2021/07/04/RWXu1e.png" alt="RWXu1e.png"></a></p>
-<p>简单说一下:每个注解名对应了以前的标签，然后默认的话（）内是sql语句，那么返回值和输入参数怎么来???</p>
-<p>其实一开始设置xml文件的时候，也是有绑定这个接口的，对应接口的方法来设置parameterType和resultType的类型，而直接在接口的方法上设置的话，实际上这些都在方法中存在的了</p>
-<p>上面是简单的crud使用，那么对于动态语句和多表查询这些复杂语句的话，下面进行讲解：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RWX6hT"><img src="https://z3.ax1x.com/2021/07/04/RWX6hT.png" alt="RWX6hT.png"></a></p>
-<img src="/.io//07/03/Mybatis/image-20210704163751053.png" class title="image-20210704163751053"> 
-
-<h3 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h3><p>有两种方法：一是直接多表查询，制定好映射属性：</p>
-<p>如图，results表示返回结果集，result表示各个返回结果；column表示数据库对应的字段名；property表示类中的属性，其中作为属性的类要封装，则要以对应的其名字.属性来封装</p>
-<img src="/.io//07/03/Mybatis/image-20210704164539278.png" class title="image-20210704164539278">
-
-<p>二是分开查询，通过两个表之间联系的字段来连接：</p>
-<p>如下图:先对主表进行查询，将表中能封装的信息先通过Result封装，然后对于副表，即作为对象属性的表进行查询，其属性在图中详细讲解了.</p>
-<img src="/.io//07/03/Mybatis/image-20210704165538762.png" class title="image-20210704165538762">
-
-<h3 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h3><p>和上面第二个方法类似:</p>
-<img src="/.io//07/03/Mybatis/image-20210704171739687.png" class title="image-20210704171739687">
-
-<p>多对多同上</p>
-<h1 id="生命周期和作用域"><a href="#生命周期和作用域" class="headerlink" title="生命周期和作用域"></a>生命周期和作用域</h1><p>错误的使用会导致并发问题：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RT68HS"><img src="https://z3.ax1x.com/2021/07/06/RT68HS.png" alt="RT68HS.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RT6qCd"><img src="https://z3.ax1x.com/2021/07/06/RT6qCd.png" alt="RT6qCd.png"></a></p>
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><h2 id="日志工厂"><a href="#日志工厂" class="headerlink" title="日志工厂"></a>日志工厂</h2><p>对异常的进行查询和排错。日志就是就是最好的方法：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RT4EY8"><img src="https://z3.ax1x.com/2021/07/06/RT4EY8.png" alt="RT4EY8.png"></a></p>
-<p>通过<setting name="logImpl" value="STDOUT_LOGGING">在别名之前设置后（name和value的大小写以及不能有多空格），在控制台中输出创建过程</setting></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RT5ijJ"><img src="https://z3.ax1x.com/2021/07/06/RT5ijJ.md.png" alt="RT5ijJ.md.png"></a></p>
-<h2 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h2><p>  Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件、甚至是套接口服务 器、NT的事件记录器、UNIX Syslog守护进程等;</p>
-<p>我们也可以控制每一条日志的输出格式;通过定义每一条日志信息的级别我们能够更加细致地控制日志的生成过程。</p>
-<p>可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码</p>
-<p>所以需要导包：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">slf4j.version</span>&gt;</span>1.7.7<span class="tag">&lt;/<span class="name">slf4j.version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">log4j.version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">log4j.version</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 日志文件管理包 --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- log start --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;log4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 格式化对象，方便输出日志 --&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;slf4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;slf4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- log end --&gt;</span></span><br></pre></td></tr></table></figure>
-<p>同时要设置一个log4j.properties。里面的配置可以百度：</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">INFO,Console,File  </span></span><br><span class="line"><span class="comment">#定义日志输出目的地为控制台  </span></span><br><span class="line"><span class="meta">log4j.appender.Console</span>=<span class="string">org.apache.log4j.ConsoleAppender  </span></span><br><span class="line"><span class="meta">log4j.appender.Console.Target</span>=<span class="string">System.out  </span></span><br><span class="line"><span class="comment">#可以灵活地指定日志输出格式，下面一行是指定具体的格式  </span></span><br><span class="line"><span class="meta">log4j.appender.Console.layout</span> = <span class="string">org.apache.log4j.PatternLayout  </span></span><br><span class="line"><span class="meta">log4j.appender.Console.layout.ConversionPattern</span>=<span class="string">[%c] - %m%n  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">#文件大小到达指定尺寸的时候产生一个新的文件  </span></span><br><span class="line"><span class="meta">log4j.appender.File</span> = <span class="string">org.apache.log4j.RollingFileAppender  </span></span><br><span class="line"><span class="comment">#指定输出目录  </span></span><br><span class="line"><span class="meta">log4j.appender.File.File</span> = <span class="string">/usr/tomcat/logs/shenwq.log</span></span><br><span class="line"><span class="comment">#定义文件最大大小  </span></span><br><span class="line"><span class="meta">log4j.appender.File.MaxFileSize</span> = <span class="string">10MB  </span></span><br><span class="line"><span class="comment"># 输出所以日志，如果换成DEBUG表示输出DEBUG以上级别日志  </span></span><br><span class="line"><span class="meta">log4j.appender.File.Threshold</span> = <span class="string">ALL  </span></span><br><span class="line"><span class="meta">log4j.appender.File.layout</span> = <span class="string">org.apache.log4j.PatternLayout  </span></span><br><span class="line"><span class="meta">log4j.appender.File.layout.ConversionPattern</span> =<span class="string">[%p] [%d&#123;yyyy-MM-dd HH\:mm\:ss&#125;][%c]%m%n</span></span><br><span class="line"><span class="comment">###显示SQL语句部分</span></span><br><span class="line"><span class="meta">log4j.logger.com.ibatis</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.com.ibatis.common.jdbc.SimpleDataSource</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.com.ibatis.common.jdbc.ScriptRunner</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.Java.sql.Connection</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.java.sql.Statement</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.logger.java.sql.PreparedStatement</span>=<span class="string">DEBUG</span></span><br></pre></td></tr></table></figure>
-<p>里面的指定文件输出目录自己改一下。</p>
-<p>再配置log4j为日志的实现：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span> =<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;LOG4J&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>SSM设置在web中：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span></span><br><span class="line">            org.springframework.web.util.Log4jConfigListener</span><br><span class="line">        <span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>/WEB-INF/log4j.properties<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jRefreshInterval<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>6000<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line">作者：Luoooo</span><br><span class="line">链接：https://juejin.cn/post/6844903535339896846</span><br><span class="line">来源：掘金</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>除了配置后直接使用，也可以获取一个log4j的对象:</p>
-<p>static Logger logger = Logger.getLogger(对应要用在的类.class)</p>
-<p>这个对象可以放在方法中测试，因为输出的日志比较长的话，不知道哪里是开始了这个方法，所以可以在里面用过info打印一条开始的信息</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RTTIbj"><img src="https://z3.ax1x.com/2021/07/06/RTTIbj.png" alt="RTTIbj.png"></a></p>
-<h1 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h1><p>作用:简化对实体类构造方法（有参无参）、get\set、tostring方法等等（但建议还是自己写，看起来习惯）</p>
-<img src="/.io//07/03/Mybatis/image-20210707003545979.png" class title="image-20210707003545979">
-
-<p>1、在IDEA中安装Lombok插件</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/R7DKHg"><img src="https://z3.ax1x.com/2021/07/06/R7DKHg.png" alt="R7DKHg.png"></a></p>
-<p>2、在项目中导入lombok的jar包</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>3、使用学习</p>
-<p>在实体类上加注解</p>
-<img src="/.io//07/03/Mybatis/image-20210707003621418.png" class title="image-20210707003621418">
-
-<p>4、优缺点：</p>
-<img src="/.io//07/03/Mybatis/image-20210707003646738.png" class title="image-20210707003646738">
-
-<img src="/.io//07/03/Mybatis/image-20210707003713164.png" class title="image-20210707003713164">
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/07/02/Spring-MVC2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/02/Spring-MVC2/" class="post-title-link" itemprop="url">Spring-MVC2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-07-02 16:40:04 / 修改时间：20:55:42" itemprop="dateCreated datePublished" datetime="2021-07-02T16:40:04+08:00">2021-07-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcM8hQ"><img src="https://z3.ax1x.com/2021/07/02/RcM8hQ.png" alt="RcM8hQ.png"></a></p>
-<p>当表单修改为上述类型的话，request.getParameter（）将失效</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcrH2R"><img src="https://z3.ax1x.com/2021/07/02/RcrH2R.png" alt="RcrH2R.png"></a></p>
-<img src="/.io//07/02/Spring-MVC2/image-20210702190104147.png" class title="image-20210702190104147">
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcgOEV"><img src="https://z3.ax1x.com/2021/07/02/RcgOEV.png" alt="RcgOEV.png"></a></p>
-<img src="/.io//07/02/Spring-MVC2/image-20210702185816401.png" class title="image-20210702185816401">
-
-<h1 id="SpringMVC拦截器"><a href="#SpringMVC拦截器" class="headerlink" title="SpringMVC拦截器"></a>SpringMVC拦截器</h1><blockquote>
-<p>类似于Servlet开发中的过滤器Filter，用于对处理器进行预处理和后处理</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rchbkt"><img src="https://z3.ax1x.com/2021/07/02/Rchbkt.png" alt="Rchbkt.png"></a></p>
-<h2 id="实现一：自定义拦截器"><a href="#实现一：自定义拦截器" class="headerlink" title="实现一：自定义拦截器"></a>实现一：自定义拦截器</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rc585q"><img src="https://z3.ax1x.com/2021/07/02/Rc585q.png" alt="Rc585q.png"></a></p>
-<p>实现这个接口HandlerInterceptor，这个接口的所有方法是default的。</p>
-<p>所以要自己实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myinterce</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//目标方法执行之前先执行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//根据返回值决定是否继续执行 </span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//在目标执行之后，视图返回之前</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, <span class="meta">@Nullable</span> ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception </span>&#123;   &#125;</span><br><span class="line">    <span class="comment">//整个流程执行完毕后</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, <span class="meta">@Nullable</span> Exception ex)</span> <span class="keyword">throws</span> Exception </span>&#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//说一下里面的属性：request、response不用说了，modelAndView能够获得里面封装的数据</span></span><br></pre></td></tr></table></figure>
-<p>配置好拦截器之后，就要实例化它，否则无法使用！</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            表示对哪些资源进行拦截操作--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--            表示不拦截操作哪些资源--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mvc:exclude-mapping</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.gragas.interceptor.myinterce&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对于多个拦截器的执行顺序，是根据实例化的顺序进行的</p>
-<p>展开说说方法</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcTnxK"><img src="https://z3.ax1x.com/2021/07/02/RcTnxK.png" alt="RcTnxK.png"></a></p>
-<h1 id="SpringMVC处理异常"><a href="#SpringMVC处理异常" class="headerlink" title="SpringMVC处理异常"></a>SpringMVC处理异常</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RcbYGR"><img src="https://z3.ax1x.com/2021/07/02/RcbYGR.png" alt="RcbYGR.png"></a></p>
-<p>使用异常处理器的原因：介绍异常在代码中的耦合</p>
-<h2 id="方式一：使用mvc自带的异常处理器"><a href="#方式一：使用mvc自带的异常处理器" class="headerlink" title="方式一：使用mvc自带的异常处理器"></a>方式一：使用mvc自带的异常处理器</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rcq2tJ"><img src="https://z3.ax1x.com/2021/07/02/Rcq2tJ.png" alt="Rcq2tJ.png"></a></p>
-<p>里面只设置视图名称的前提是因为配置了视图解析器中的前缀和后缀</p>
-<h2 id="方式二：自定义异常处理器（实现接口）"><a href="#方式二：自定义异常处理器（实现接口）" class="headerlink" title="方式二：自定义异常处理器（实现接口）"></a>方式二：自定义异常处理器（实现接口）</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rcqh11"><img src="https://z3.ax1x.com/2021/07/02/Rcqh11.png" alt="Rcqh11.png"></a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现HandlerExceptionResolver接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">e</span> <span class="keyword">implements</span> <span class="title">HandlerExceptionResolver</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">            Exception表示异常对象</span></span><br><span class="line"><span class="comment">            ModelAndView ：跳转到错误视图信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">resolveException</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletRequest httpServletRequest,</span></span></span><br><span class="line"><span class="function"><span class="params">            HttpServletResponse httpServletResponse,</span></span></span><br><span class="line"><span class="function"><span class="params">            Object o,</span></span></span><br><span class="line"><span class="function"><span class="params">            Exception e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">		<span class="comment">//对异常进行判断</span></span><br><span class="line">        <span class="keyword">if</span> (e <span class="keyword">instanceof</span> ClassNotFoundException)&#123;</span><br><span class="line">            modelAndView.addObject(<span class="string">&quot;info&quot;</span>,<span class="string">&quot;类查找异常&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            modelAndView.addObject(<span class="string">&quot;info&quot;</span>,<span class="string">&quot;xxx异常&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">            modelAndView.setViewName(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后要实例化这个类</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.gragas.interceptor.e&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/28/Spring-MVC1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/28/Spring-MVC1/" class="post-title-link" itemprop="url">Spring-MVC1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-28 09:09:30" itemprop="dateCreated datePublished" datetime="2021-06-28T09:09:30+08:00">2021-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-04 17:43:42" itemprop="dateModified" datetime="2021-07-04T17:43:42+08:00">2021-07-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里是快速学习mvc的概念和运用，至于具体的实现，并没有在这里提到。不论文档还是视频，好像并没有具体展开对代码进行分析，文档是相较于视频学习有了更多细节上的知识学习。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/28/Spring-MVC1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/26/Spring4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/26/Spring4/" class="post-title-link" itemprop="url">Spring4</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-26 18:03:08 / 修改时间：21:42:10" itemprop="dateCreated datePublished" datetime="2021-06-26T18:03:08+08:00">2021-06-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这次学习的将会是Spring对于编程式（既通过Java代码）去操作数据库中的方法进行的一定的封装。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/26/Spring4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/03/Mybatis/" rel="prev" title="Mybatis">
+      <i class="fa fa-chevron-left"></i> Mybatis
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/19/Spring3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/Spring3/" class="post-title-link" itemprop="url">Spring3</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-19 19:32:47" itemprop="dateCreated datePublished" datetime="2021-06-19T19:32:47+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-03 18:30:25" itemprop="dateModified" datetime="2021-07-03T18:30:25+08:00">2021-07-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Spring-中的事件处理"><a href="#Spring-中的事件处理" class="headerlink" title="Spring 中的事件处理"></a>Spring 中的事件处理</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/Spring3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/19/Spring2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/Spring2/" class="post-title-link" itemprop="url">Spring2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-19 13:26:52" itemprop="dateCreated datePublished" datetime="2021-06-19T13:26:52+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-04 18:58:16" itemprop="dateModified" datetime="2021-07-04T18:58:16+08:00">2021-07-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面了解了一下Spring的IOC，现在从配置文件转到对应的注解学习。加油</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/19/Spring2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/06/14/Spring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/14/Spring/" class="post-title-link" itemprop="url">Spring</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-14 13:15:17" itemprop="dateCreated datePublished" datetime="2021-06-14T13:15:17+08:00">2021-06-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-25 13:05:46" itemprop="dateModified" datetime="2021-06-25T13:05:46+08:00">2021-06-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>​    有段时间没记录了，也不是不记。只是记录在其他地方去了-&gt;语雀！现在准备做一点Spring框架的随笔。但是不打算看视频，想尝试看下文档学习，而且时间很紧迫，忧虑于秋招，所以抓紧！感觉看视频和文档学习的差别主要在于内容细粒度方面吧。毕竟视频是为了快速上手，会教一下常用的。而文档一开始感觉属实迷，后面发现算是层层递进吧，一点一点引入各个模块学习。</p>
-<p>​</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/14/Spring/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/03/28/Day-three/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/28/Day-three/" class="post-title-link" itemprop="url">Day-three</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-28 10:08:29" itemprop="dateCreated datePublished" datetime="2021-03-28T10:08:29+08:00">2021-03-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-29 00:14:30" itemprop="dateModified" datetime="2021-03-29T00:14:30+08:00">2021-03-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    在对基础进行汇总的时候，发现度娘上面的的确确有很多很棒的内容，所以emmm我当然选择做了搬运工，当然然白嫖很可耻，所以我再最下面都有传送门标注原作者好的吧！在看别人博客的同时，我发现除了写知识以外，可以将自己的想法也写下来同时加以验证，感觉太棒了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/28/Day-three/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gragaszz.github.io/2021/03/19/Day-two/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head-sculpture.jpg">
-      <meta itemprop="name" content="Gragas">
-      <meta itemprop="description" content="不要像水消失在水中">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="看不见我">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/19/Day-two/" class="post-title-link" itemprop="url">Java学习-Day-two</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-19 09:11:18" itemprop="dateCreated datePublished" datetime="2021-03-19T09:11:18+08:00">2021-03-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-28 10:07:33" itemprop="dateModified" datetime="2021-03-28T10:07:33+08:00">2021-03-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    发现的的确确不太会排版嗷，但继续保持拉，总会好起来的嘛，还有上一次的图片发现无法加载，度娘了一下好像也不太适合，后面问朋友发现可以将图片再网站托管，用上传后返回的链接，着实可以。保存图片的地方用的图床！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/19/Day-two/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1231,6 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSM%E7%9A%84%E6%95%B4%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">SSM的整合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SS%E7%9A%84%E6%95%B4%E5%90%88"><span class="nav-number">1.1.</span> <span class="nav-text">SS的整合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis%E7%9A%84%E6%95%B4%E5%90%88"><span class="nav-number">1.2.</span> <span class="nav-text">Mybatis的整合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSM%E7%9A%84%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">SSM的所有配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mybatis-config-xml"><span class="nav-number">1.3.1.</span> <span class="nav-text">mybatis-config.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring-mvc-xml"><span class="nav-number">1.3.2.</span> <span class="nav-text">spring-mvc.xml:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml"><span class="nav-number">1.3.3.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#applicationContext-xml"><span class="nav-number">1.3.4.</span> <span class="nav-text">applicationContext.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdbc-properties"><span class="nav-number">1.3.5.</span> <span class="nav-text">jdbc.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logback-xml"><span class="nav-number">1.3.6.</span> <span class="nav-text">logback.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96pom-xml"><span class="nav-number">1.3.7.</span> <span class="nav-text">依赖pom.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="nav-number">1.4.</span> <span class="nav-text">思维导图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%A3%E8%B0%A2"><span class="nav-number">1.5.</span> <span class="nav-text">鸣谢</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
